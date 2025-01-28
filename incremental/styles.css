@@ -25,3 +25,8 @@
 .resource-counter {
     text-shadow: 0 0 10px currentColor;
 }
+
+.opacity-50 {
+    opacity: 0.5;
+    pointer-events: none;
+}
