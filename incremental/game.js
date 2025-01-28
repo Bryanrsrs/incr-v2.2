@@ -55,7 +55,7 @@ const Game = () => {
         const energyGain = prev.autoClickers * 0.1;
         const goldGain = prev.warriors * 0.1;
         const gemGain = prev.mages * 0.05;
-        
+
         return {
           ...prev,
           energy: prev.energy + (energyGain * prev.multiplier),
@@ -68,11 +68,11 @@ const Game = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     setGameState(prev => {
       const isCritical = Math.random() * 100 < prev.criticalChance;
       let gain = 1 * prev.multiplier;
-      
+
       if (isCritical) {
         gain *= 2;
         showFloatingText(event, 'CRITICAL!', 'text-yellow-400');
@@ -88,7 +88,7 @@ const Game = () => {
 
   const showFloatingText = (event, text, colorClass) => {
     const floating = document.createElement('div');
-    floating.className = `fixed ${colorClass} text-xl font-bold animate-bounce`;
+    floating.className = `${colorClass} text-xl font-bold animate-bounce`;
     floating.style.left = `${event.clientX - 20}px`;
     floating.style.top = `${event.clientY - 20}px`;
     floating.textContent = text;
@@ -96,12 +96,12 @@ const Game = () => {
     setTimeout(() => floating.remove(), 1000);
   };
 
-  const calculateUpgradeCost = (upgrade) => {
+  const calculateUpgradeCost = upgrade => {
     const level = gameState[upgrade.id] || 0;
     return Math.floor(upgrade.baseCost * Math.pow(1.15, level));
   };
 
-  const purchaseUpgrade = (upgrade) => {
+  const purchaseUpgrade = upgrade => {
     const cost = calculateUpgradeCost(upgrade);
     if (gameState.energy >= cost) {
       setGameState(prev => ({
@@ -243,7 +243,9 @@ const Game = () => {
             <button
               onClick={handlePrestige}
               disabled={gameState.energy < 10000}
-              className={`w-full ${gameState.energy >= 10000 ? 'bg-purple-600 hover:bg-purple-700' : 'bg-gray-700'} text-white font-bold py-4 px-4 rounded-lg text-xl mb-4`}
+              className={`w-full ${
+                gameState.energy >= 10000 ? 'bg-purple-600 hover:bg-purple-700' : 'bg-gray-700'
+              } text-white font-bold py-4 px-4 rounded-lg text-xl mb-4`}
             >
               PRESTIGE (10,000 Energy)
             </button>
