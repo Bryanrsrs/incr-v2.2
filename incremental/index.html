@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adrenaline Rush 4.0</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="game.js" rel="stylesheet" type="text/javascript">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-red-500 mb-2">⚡ Adrenaline Rush 4.0 ⚡</h1>
+            <p class="text-gray-400">Master the elements, harness the power, achieve immortality!</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg border border-red-500 mb-6">
+            <h2 class="text-2xl font-bold mb-4">Resources & Power</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-gray-700 p-4 rounded-lg transform hover:scale-105 transition-transform">
+                    <i class="fas fa-bolt text-yellow-400 mr-2"></i>
+                    <p class="text-xl">Energy: <span id="energy">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <a href="#" id="generateEnergy" class="w-full text-center bg-red-600 hover:bg-red-700 text-white font-bold py-8 px-8 rounded-lg text-2xl transform hover:scale-105 transition-transform duration-200 active:bg-red-800">
+                    <i class="fas fa-bolt mr-2"></i>
+                    GENERATE ENERGY
+                </a>
+
+                <a href="#" id="superCharge" class="w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-lg text-xl">
+                    <i class="fas fa-power-off mr-2"></i>
+                    SUPER CHARGE (Cost: 1000 Energy)
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
