@@ -1,0 +1,4 @@
+[build]
+  base = "/incremental"
+  publish = "/"
+  command = "# no build command needed"
